@@ -3,7 +3,7 @@ from utilities import alphawaves
 
 dataset = alphawaves.AlphaWaves()
 
-subject = 3
+subject = 2
 epochs = dataset.get_subject_epochs(subject)
 
 fmin = 4; fmax = 20
