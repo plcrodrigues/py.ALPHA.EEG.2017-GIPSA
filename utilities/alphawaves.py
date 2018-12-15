@@ -7,7 +7,7 @@ import yaml
 from utilities import download as dl
 from scipy.io import loadmat
 
-ALPHAWAVES_URL = 'https://sandbox.zenodo.org/record/255797/files/'
+ALPHAWAVES_URL = 'https://sandbox.zenodo.org/record/256020/files/'
 
 class AlphaWaves():
     '''
@@ -15,31 +15,31 @@ class AlphaWaves():
 
     def __init__(self):
 
-        self.subject_list = range(1, 20+1)
+        self.subject_list = list(range(7)) + list(range(8, 20+1))
 
     def get_subject_epochs(self, subject):
-        """return data for a single subject"""
+        """return data for a single subject"""        
 
         file_path_list = self.data_path(subject)
         for filepath in file_path_list:
 
-            # load the .mat and reshape it for becoming an epochs object instance
             data = loadmat(filepath)
-            Xop = data['OPEN'].T
-            Xcl = data['CLOSE'].T
-            X = np.concatenate([Xop, Xcl])
 
-            ch_names = ['FP1', 'FP2', 'FC5', 'AFz', 'FC6', 'T7', 'Cz', 'T8', 'P7', 'P3', 'Pz', 'P4', 'P8', 'O1', 'Oz', 'O2']
-            ch_types = ['eeg'] * len(ch_names)
-            info = mne.create_info(ch_names=ch_names, sfreq=512, ch_types=ch_types, montage='standard_1020')
+            S = data['SIGNAL'][:,1:17]
+            stim_close = data['SIGNAL'][:,17]
+            stim_open = data['SIGNAL'][:,18]
+            stim = 1*stim_close + 2*stim_open
 
-            event_id = {'open':1, 'closed':2}
-            events = [[i*5120, 0, 1] for i in np.arange(5)] + [[i*5120, 0, 2] for i in 5+np.arange(5)]
-            
-            events = np.stack(events)
-            epochs = mne.EpochsArray(X, info=info, event_id=event_id, events=events, verbose=False)
+            chnames = ['Fp1','Fp2','Fc5','Fz','Fc6','T7','Cz','T8','P7','P3','Pz','P4','P8','O1','Oz','O2','stim']
+            chtypes = ['eeg'] * 16 + ['stim']
+            X = np.concatenate([S, stim[:,None]], axis=1).T
 
-        return epochs
+            sfreq = 512
+            info = mne.create_info(ch_names=chnames, sfreq=512, 
+                                   ch_types=chtypes, montage='standard_1020', verbose=False)
+            raw = mne.io.RawArray(data=X, info=info, verbose=False)
+
+        return raw
 
     def data_path(self, subject, path=None, force_update=False,
                   update_path=None, verbose=None):
@@ -48,7 +48,7 @@ class AlphaWaves():
             raise(ValueError("Invalid subject number"))
 
         #check if has the .zip
-        url = '{:s}subject{:02d}.mat'.format(ALPHAWAVES_URL, subject)
+        url = '{:s}subject_{:02d}.mat'.format(ALPHAWAVES_URL, subject)
         file_path = dl.data_path(url, 'ALPHAWAVES')
 
         return [file_path]
