@@ -1,8 +1,9 @@
-from scipy.signal import welch
-from utilities import alphawaves
+import mne
 import matplotlib.pyplot as plt
 import numpy as np
-import mne
+from alphawaves.dataset import AlphaWaves
+from scipy.signal import welch
+
 """
 ================================
 Spectral analysis of the trials
@@ -21,12 +22,11 @@ Alpha rhythm that appears when a person closes here eyes.
 import warnings
 warnings.filterwarnings("ignore")
 
-
 # define the dataset instance
-dataset = alphawaves.AlphaWaves()
+dataset = AlphaWaves()
 
 # get the data from subject of interest
-subject = 1
+subject = dataset.subject_list[0]
 raw = dataset.get_subject_epochs(subject)
 
 # filter data and resample

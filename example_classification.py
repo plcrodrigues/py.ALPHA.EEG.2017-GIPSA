@@ -3,7 +3,7 @@ from sklearn.model_selection import StratifiedKFold, cross_val_score
 from pyriemann.embedding import Embedding
 from pyriemann.classification import MDM
 from pyriemann.estimation import Covariances
-from utilities import alphawaves
+from alphawaves.dataset import AlphaWaves
 import matplotlib.pyplot as plt
 import numpy as np
 import mne
@@ -27,10 +27,10 @@ warnings.filterwarnings("ignore")
 
 
 # define the dataset instance
-dataset = alphawaves.AlphaWaves()
+dataset = AlphaWaves()
 
 # get the data from subject of interest
-subject = dataset.subject_list[2]
+subject = dataset.subject_list[0]
 raw = dataset.get_subject_epochs(subject)
 
 # filter data and resample

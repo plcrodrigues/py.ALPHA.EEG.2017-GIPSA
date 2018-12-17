@@ -11,4 +11,10 @@ To make things work, you might need to install some packages. They are all liste
 pip install -r requirements.txt
 ```
 
-in your command line. Note that you might want to create a virtual environment before installing the packages.
+in your command line. Then, to ensure that your code find the right scripts whenever you do `import alphawaves`, you should also do
+
+```
+python setup.py develop # because no stable release yet
+```
+
+Note that you might want to create a *virtual environment* before doing all these installations.

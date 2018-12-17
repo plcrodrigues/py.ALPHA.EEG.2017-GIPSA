@@ -1,6 +1,6 @@
 import mne
 import numpy as np
-from utilities import download as dl
+from alphawaves import download as dl
 from scipy.io import loadmat
 
 ALPHAWAVES_URL = 'https://zenodo.org/record/2348892/files/'
