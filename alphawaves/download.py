@@ -59,4 +59,5 @@ def data_path(url, sign, path=None, force_update=False, update_path=True,
 
     # Offer to update the path
     _do_path_update(path, update_path, key, sign)
+    
     return destination

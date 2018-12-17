@@ -63,16 +63,16 @@ C = Covariances(estimator='lwf').fit_transform(X)
 emb = Embedding(metric='riemann').fit_transform(C)
 
 # scatter plot of the embedded points
-fig, ax = plt.subplots(facecolor='white', figsize=(5.6, 5.2))
+fig = plt.figure(facecolor='white', figsize=(5.6, 5.2))
 colors = {1: 'r', 2: 'b'}
 for embi, yi in zip(emb, y):
-    ax.scatter(embi[0], embi[1], s=120, c=colors[yi])
+    plt.scatter(embi[0], embi[1], s=120, c=colors[yi])
 labels = {1: 'closed', 2: 'open'}
 for yi in np.unique(y):
-    ax.scatter([], [], c=colors[yi], label=labels[yi])
-ax.set_xticks([-1, -0.5, 0.0, +0.5, 1.0])
-ax.set_yticks([-1, -0.5, 0.0, +0.5, 1.0])
-ax.legend()
-ax.set_title('Spectral embedding of the epochs from subject ' + str(subject),
+    plt.scatter([], [], c=colors[yi], label=labels[yi])
+plt.xticks([-1, -0.5, 0.0, +0.5, 1.0])
+plt.yticks([-1, -0.5, 0.0, +0.5, 1.0])
+plt.legend()
+plt.title('Spectral embedding of the epochs from subject ' + str(subject),
              fontsize=10)
-fig.show()
+plt.show()

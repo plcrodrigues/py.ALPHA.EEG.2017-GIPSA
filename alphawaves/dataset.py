@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: UTF-8 -*-
+
 import mne
 import numpy as np
 from alphawaves import download as dl
@@ -17,7 +20,7 @@ class AlphaWaves():
     This dataset concerns an experiment carried out at GIPSA-lab
     (University of Grenoble Alpes, CNRS, Grenoble-INP) in 2017.
     Principal Investigators : Eng. Grégoire Cattan, Eng. Pedro L. C. Rodrigues
-    Scientific Supervisor :  Dr. Marco Congedo
+    Scientific Supervisor : Dr. Marco Congedo
 
     Introduction :
 
