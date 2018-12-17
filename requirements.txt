@@ -1,6 +1,7 @@
-matplotlib==3.0.2
-pyriemann==0.2.5
-mne==0.16.1
-scipy==0.19.0
 numpy==1.12.1
+mne==0.16.1
+pyriemann==0.2.5
+setuptools==40.6.3
+scipy==0.19.0
+matplotlib==3.0.2
 scikit_learn==0.20.1
