@@ -129,7 +129,7 @@ class AlphaWaves():
 
         self.subject_list = list(range(7)) + list(range(8, 20 + 1))
 
-    def get_subject_epochs(self, subject):
+    def _get_single_subject_data(self, subject):
         """return data for a single subject"""
 
         file_path_list = self.data_path(subject)

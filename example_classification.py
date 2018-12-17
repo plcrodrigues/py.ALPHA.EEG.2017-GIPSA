@@ -31,7 +31,7 @@ dataset = AlphaWaves()
 
 # get the data from subject of interest
 subject = dataset.subject_list[0]
-raw = dataset.get_subject_epochs(subject)
+raw = dataset._get_single_subject_data(subject)
 
 # filter data and resample
 fmin = 3
