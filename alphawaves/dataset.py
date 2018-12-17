@@ -130,7 +130,7 @@ class AlphaWaves():
 
     def __init__(self):
 
-        self.subject_list = list(range(7)) + list(range(8, 20 + 1))
+        self.subject_list = list(range(1, 20+1))
 
     def _get_single_subject_data(self, subject):
         """return data for a single subject"""
