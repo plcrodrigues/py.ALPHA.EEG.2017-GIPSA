@@ -4,14 +4,17 @@ Spectral analysis of the trials
 ================================
 
 This example shows how to extract the epochs from the dataset of a given subject
-and then do a spectral analysis of the signals. The expected behavior is that 
-there should be a peak around 10 Hz for the 'closed' epochs, due to the 
+and then do a spectral analysis of the signals. The expected behavior is that
+there should be a peak around 10 Hz for the 'closed' epochs, due to the
 Alpha rhythm that appears when a person closes here eyes.
 
 """
 # Authors: Pedro Rodrigues <pedro.rodrigues01@gmail.com>
 #
 # License: BSD (3-clause)
+
+import warnings
+warnings.filterwarnings("ignore")
 
 import mne
 import numpy as np
@@ -27,7 +30,7 @@ dataset = alphawaves.AlphaWaves()
 subject = 1
 raw = dataset.get_subject_epochs(subject)
 
-# filter data and resample 
+# filter data and resample
 fmin = 3; fmax = 40
 raw.filter(fmin, fmax, verbose=False)
 raw.resample(sfreq=128, verbose=False)
@@ -35,7 +38,7 @@ raw.resample(sfreq=128, verbose=False)
 # detect the events and cut the signal into epochs
 events = mne.find_events(raw=raw, shortest_event=1, verbose=False)
 event_id = {'closed':1, 'open':2}
-epochs = mne.Epochs(raw, events, event_id, tmin=2.0, tmax=8.0, baseline=None, 
+epochs = mne.Epochs(raw, events, event_id, tmin=2.0, tmax=8.0, baseline=None,
 				    verbose=False)
 epochs.load_data().pick_channels(['Oz'])
 

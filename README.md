@@ -1,10 +1,14 @@
 # Alpha Waves Dataset
-Repository with basic scripts for using the Alpha Waves Dataset developed at GIPSA-lab
+Repository with basic scripts for using the Alpha Waves Dataset developed at GIPSA-lab. The dataset files and their documentation are all available at 
 
-To make this code work, you might need to install some Python packages. They are all listed in the `requirements.txt` file and can be easily installed by doing
+[https://zenodo.org/record/2348892](https://zenodo.org/record/2348892#.XBdqNs9Ki3I)
+
+The code in the repository was developed in **Python 3**.
+
+To make things work, you might need to install some packages. They are all listed in the `requirements.txt` file and can be easily installed by doing
 
 ```
 pip install -r requirements.txt
 ```
 
-in your command line (you might want to create a virtual environment before installing the packages)
+in your command line. Note that you might want to create a virtual environment before installing the packages.
