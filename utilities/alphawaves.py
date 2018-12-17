@@ -5,6 +5,7 @@ from scipy.io import loadmat
 
 ALPHAWAVES_URL = 'https://zenodo.org/record/2348892/files/'
 
+
 class AlphaWaves():
     '''Dataset containing EEG recordings of subjects in a simple
     resting-state eyes open/closed experimental protocol. Data were recorded
@@ -34,13 +35,13 @@ class AlphaWaves():
     processing and machine learning algorithms. An example of application of
     this dataset can be seen in [5].
 
-    I.Participants
+    I. Participants
 
     A total of 20 volunteers participated in the experiment (7 females), with
     mean (sd) age 25.8 (5.27) and median 25.5. 18 subjects were between 19 and
     28 years old. Two participants with age 33 and 44 were outside this range.
 
-    II.Procedures
+    II. Procedures
 
     EEG signals were acquired using a standard research grade amplifier
     (g.USBamp, g.tec, Schiedlberg, Austria) and the EC20 cap equipped with 16
@@ -68,7 +69,7 @@ class AlphaWaves():
     condition. The experimenter then tagged the EEG signal using the in-house
     application and started a 10-second countdown of a block.
 
-    III.Organization of the dataset
+    III. Organization of the dataset
 
     For each subject we provide a single .mat file containing the complete
     recording of the session. The file is a 2D-matrix where the rows contain
@@ -126,7 +127,7 @@ class AlphaWaves():
 
     def __init__(self):
 
-        self.subject_list = list(range(7)) + list(range(8, 20+1))
+        self.subject_list = list(range(7)) + list(range(8, 20 + 1))
 
     def get_subject_epochs(self, subject):
         """return data for a single subject"""
@@ -136,18 +137,35 @@ class AlphaWaves():
 
             data = loadmat(filepath)
 
-            S = data['SIGNAL'][:,1:17]
-            stim_close = data['SIGNAL'][:,17]
-            stim_open = data['SIGNAL'][:,18]
-            stim = 1*stim_close + 2*stim_open
+            S = data['SIGNAL'][:, 1:17]
+            stim_close = data['SIGNAL'][:, 17]
+            stim_open = data['SIGNAL'][:, 18]
+            stim = 1 * stim_close + 2 * stim_open
 
-            chnames = ['Fp1','Fp2','Fc5','Fz','Fc6','T7','Cz','T8','P7','P3','Pz','P4','P8','O1','Oz','O2','stim']
+            chnames = [
+                'Fp1',
+                'Fp2',
+                'Fc5',
+                'Fz',
+                'Fc6',
+                'T7',
+                'Cz',
+                'T8',
+                'P7',
+                'P3',
+                'Pz',
+                'P4',
+                'P8',
+                'O1',
+                'Oz',
+                'O2',
+                'stim']
             chtypes = ['eeg'] * 16 + ['stim']
-            X = np.concatenate([S, stim[:,None]], axis=1).T
+            X = np.concatenate([S, stim[:, None]], axis=1).T
 
-            sfreq = 512
             info = mne.create_info(ch_names=chnames, sfreq=512,
-                                   ch_types=chtypes, montage='standard_1020', verbose=False)
+                                   ch_types=chtypes, montage='standard_1020',
+                                   verbose=False)
             raw = mne.io.RawArray(data=X, info=info, verbose=False)
 
         return raw
@@ -158,7 +176,7 @@ class AlphaWaves():
         if subject not in self.subject_list:
             raise(ValueError("Invalid subject number"))
 
-        #check if has the .zip
+        # check if has the .zip
         url = '{:s}subject_{:02d}.mat'.format(ALPHAWAVES_URL, subject)
         file_path = dl.data_path(url, 'ALPHAWAVES')
 
