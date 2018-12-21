@@ -179,7 +179,6 @@ class AlphaWaves():
         if subject not in self.subject_list:
             raise(ValueError("Invalid subject number"))
 
-        # check if has the .zip
         url = '{:s}subject_{:02d}.mat'.format(ALPHAWAVES_URL, subject)
         file_path = dl.data_path(url, 'ALPHAWAVES')
 
