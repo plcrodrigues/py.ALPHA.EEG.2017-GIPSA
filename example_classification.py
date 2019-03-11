@@ -73,6 +73,9 @@ for yi in np.unique(y):
 plt.xticks([-1, -0.5, 0.0, +0.5, 1.0])
 plt.yticks([-1, -0.5, 0.0, +0.5, 1.0])
 plt.legend()
-plt.title('Spectral embedding of the epochs from subject ' + str(subject),
-             fontsize=10)
+plt.title(
+    'Spectral embedding of the epochs from subject ' +
+    str(subject),
+    fontsize=10)
+
 plt.show()
