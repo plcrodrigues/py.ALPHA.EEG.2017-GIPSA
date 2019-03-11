@@ -24,6 +24,8 @@ Note that you might want to create a *virtual environment* before doing all thes
 # References
 
 [1] Cattan et al. "EEG Alpha Waves dataset" [DOI](https://10.5281/zenodo.2348891)
+
 [2] Gramfort et al. "MNE software for processing MEG and EEG data" [DOI](https://doi.org/10.1016/j.neuroimage.2013.10.027)
+
 [3] Gramfort et al. "MEG and EEG data analysis with MNE-Python" [DOI](https://doi.org/10.3389/fnins.2013.00267)
 
