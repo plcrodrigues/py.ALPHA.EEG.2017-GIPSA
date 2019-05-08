@@ -43,7 +43,8 @@ raw.resample(sfreq=128, verbose=False)
 events = mne.find_events(raw=raw, shortest_event=1, verbose=False)
 event_id = {'closed': 1, 'open': 2}
 epochs = mne.Epochs(raw, events, event_id, tmin=2.0, tmax=8.0, baseline=None,
-                    verbose=False)
+                    verbose=False, preload=True)
+epochs.pick_types(eeg=True)
 
 # get trials and labels
 X = epochs.get_data()
