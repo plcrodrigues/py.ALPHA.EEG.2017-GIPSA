@@ -27,7 +27,7 @@ warnings.filterwarnings("ignore")
 
 
 # define the dataset instance
-dataset = AlphaWaves()
+dataset = AlphaWaves() # use useMontagePosition = False with recent mne versions
 
 # get the data from subject of interest
 subject = dataset.subject_list[0]
