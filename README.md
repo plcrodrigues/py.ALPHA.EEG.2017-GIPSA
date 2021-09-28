@@ -9,7 +9,6 @@ The package can be downloaded with pip:
 
 ```
 pip install alphawaves
-
 ```
 
 Alternatively, you might want to clone the github repository on your local computer, and install the package by running:
