@@ -3,23 +3,36 @@ Repository with basic scripts for using the Alpha Waves Dataset developed at GIP
 
 [https://zenodo.org/record/2348892](https://zenodo.org/record/2348892#.XBdqNs9Ki3I)
 
-The code of this repository was developed in **Python 3** using MNE-Python [2, 3] as tool for the EEG processing.
+The code of this repository was developed in **Python 3.8** using MNE-Python [2, 3] as tool for the EEG processing.
 
-To make things work, you might need to install some packages. They are all listed in the `requirements.txt` file and can be easily installed by doing
-
-```
-pip install -r requirements.txt
-```
-
-in your command line. 
-
-Then, to ensure that your code finds the right scripts whenever you do `import alphawaves`, you should also do
+The package can be downloaded with pip:
 
 ```
-python setup.py develop # because no stable release yet
+pip install alphawaves
+
 ```
 
-Note that you might want to create a *virtual environment* before doing all these installations.
+Alternatively, you might want to clone the github repository on your local computer, and install the package by running:
+
+```
+python setup.py develop
+```
+
+All dependencies are listed in `requirements.txt` for your interest.
+
+
+Then, to ensure that your code finds the right scripts, open a python shell and type:
+
+```
+import alphawaves
+```
+
+
+Note that you might want to create a *virtual environment* before doing all these installations, e.g.:
+
+```
+conda create -n eegalpha python=3.8
+```
 
 # References
 
