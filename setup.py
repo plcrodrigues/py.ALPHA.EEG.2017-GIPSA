@@ -137,9 +137,9 @@ setup(
     # https://packaging.python.org/en/latest/requirements.html
     setup_requires=["setuptools==40.6.3"],
     install_requires=[
+            "scikit_learn==0.23",
             "mne==0.16.1",
             "pyriemann==0.2.6",
-            "scikit_learn==0.23",
             "scipy==1.7.2",
             "matplotlib==3.4.3"],
     # List additional groups of dependencies here (e.g. development
