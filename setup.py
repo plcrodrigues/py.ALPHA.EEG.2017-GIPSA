@@ -138,7 +138,7 @@ setup(
         "setuptools>=40.6.3",
         "numpy>=1.13.3"],
     install_requires=[
-            "mne>=0.16.1",
+            "mne==0.16.1",
             "pyriemann>=0.2.6",
             "scipy>=1.8",
             "scikit_learn>=0.23",

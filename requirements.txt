@@ -1,4 +1,4 @@
-mne>=0.16.1
+mne==0.16.1
 pyriemann>=0.2.6
 setuptools>=40.6.3
 scipy>=1.8
