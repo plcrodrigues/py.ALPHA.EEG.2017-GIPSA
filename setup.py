@@ -106,11 +106,10 @@ setup(
 
         # Specify the Python versions you support here. In particular, ensure
         # that you indicate whether you support Python 2, Python 3 or both.
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
     ],
 
     # This field adds keywords for your project which will appear on the
@@ -136,7 +135,14 @@ setup(
     #
     # For an analysis of "install_requires" vs pip's requirements files see:
     # https://packaging.python.org/en/latest/requirements.html
-    install_requires=["mne==0.16.1", "pyriemann==0.2.6", "setuptools==40.6.3", "scipy==1.7.2", "matplotlib==3.4.3", "numpy>=1.13.3", "scikit_learn==0.23"],
+    install_requires=[
+            "mne==0.16.1",
+            "pyriemann==0.2.6",
+            "setuptools==40.6.3",
+            "scipy==1.7.2",
+            "matplotlib==3.4.3",
+            "numpy>=1.13.3",
+            "scikit_learn==0.23"],
     # List additional groups of dependencies here (e.g. development
     # dependencies). Users will be able to install these using the "extras"
     # syntax, for example:
