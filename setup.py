@@ -134,7 +134,9 @@ setup(
     #
     # For an analysis of "install_requires" vs pip's requirements files see:
     # https://packaging.python.org/en/latest/requirements.html
-    setup_requires=["setuptools>=40.6.3"],
+    setup_requires=[
+        "setuptools>=40.6.3",
+        "numpy>=1.13.3"],
     install_requires=[
             "scikit_learn==0.23",
             "mne==0.16.1",
