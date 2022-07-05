@@ -106,7 +106,6 @@ setup(
 
         # Specify the Python versions you support here. In particular, ensure
         # that you indicate whether you support Python 2, Python 3 or both.
-        'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
@@ -140,7 +139,7 @@ setup(
             "scikit_learn==0.23",
             "mne==0.16.1",
             "pyriemann==0.2.6",
-            "scipy==1.7.2",
+            "scipy==1.8",
             "matplotlib==3.4.3"],
     # List additional groups of dependencies here (e.g. development
     # dependencies). Users will be able to install these using the "extras"
