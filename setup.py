@@ -136,8 +136,7 @@ setup(
     #
     # For an analysis of "install_requires" vs pip's requirements files see:
     # https://packaging.python.org/en/latest/requirements.html
-    install_requires=["mne==0.16.1", "pyriemann==0.2.6", "setuptools==40.6.3", "scipy==1.7.1", "matplotlib==3.4.3", "scikit_learn==0.23"],
-
+    install_requires=["mne==0.16.1", "pyriemann==0.2.6", "setuptools==40.6.3", "scipy==1.7.2", "matplotlib==3.4.3", "scikit_learn==0.23"],
     # List additional groups of dependencies here (e.g. development
     # dependencies). Users will be able to install these using the "extras"
     # syntax, for example:
