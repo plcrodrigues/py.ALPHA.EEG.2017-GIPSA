@@ -141,7 +141,8 @@ setup(
             "pyriemann>=0.2.6",
             "scipy>=1.8",
             "scikit_learn>=0.23",
-            "matplotlib>=3.4.3"],
+            "matplotlib>=3.4.3",
+            "seaborn>=0.12.0"],
     # List additional groups of dependencies here (e.g. development
     # dependencies). Users will be able to install these using the "extras"
     # syntax, for example:
