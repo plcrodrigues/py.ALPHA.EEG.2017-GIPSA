@@ -1,6 +1,6 @@
 from sklearn.pipeline import make_pipeline
 from sklearn.model_selection import StratifiedKFold, cross_val_score
-from pyriemann.embedding import Embedding
+from pyriemann.embedding import SpectralEmbedding
 from pyriemann.classification import MDM
 from pyriemann.estimation import Covariances
 from alphawaves.dataset import AlphaWaves
@@ -61,7 +61,7 @@ print('mean accuracy :', scr.mean())
 
 # get the spectral embedding of the epochs
 C = Covariances(estimator='lwf').fit_transform(X)
-emb = Embedding(metric='riemann').fit_transform(C)
+emb = SpectralEmbedding(metric='riemann').fit_transform(C)
 
 # scatter plot of the embedded points
 fig = plt.figure(facecolor='white', figsize=(5.6, 5.2))
