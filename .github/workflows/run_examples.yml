@@ -22,7 +22,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         python setup.py develop
-    - name: Run examples
-      run: |
-        ./example_classification.py
-        ./example_spectra.py
+    - name: Run example on classification
+      run: python example_classification.py
+    - name: Run example on spectra
+      run: python example_spectra.py
