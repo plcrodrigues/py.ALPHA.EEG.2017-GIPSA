@@ -56,7 +56,7 @@ def data_path(url, sign, path=None, force_update=False, update_path=True,
         if not op.isdir(op.dirname(destination)):
             os.makedirs(op.dirname(destination))
         retrieve(
-          url, None, fname=osp.basename(url), path=osp.dirname(destination)
+          url, None, fname=op.basename(url), path=op.dirname(destination)
         )
 
     # Offer to update the path
