@@ -128,11 +128,10 @@ class AlphaWaves():
 
     '''
 
-    def __init__(self, useMontagePosition = True):
+    def __init__(self):
 
         subject_list = list(range(1, 6+1)) + list(range(8, 20+1))
         self.subject_list = subject_list
-        self.useMontagePosition = useMontagePosition
 
     def _get_single_subject_data(self, subject):
         """return data for a single subject"""
