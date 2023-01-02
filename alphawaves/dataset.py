@@ -167,7 +167,7 @@ class AlphaWaves():
         X = np.concatenate([S, stim[:, None]], axis=1).T
 
         info = mne.create_info(ch_names=chnames, sfreq=512,
-                               ch_types=chtypes, montage = 'standard_1020' if self.useMontagePosition else None,
+                               ch_types=chtypes,
                                verbose=False)
         raw = mne.io.RawArray(data=X, info=info, verbose=False)
 
