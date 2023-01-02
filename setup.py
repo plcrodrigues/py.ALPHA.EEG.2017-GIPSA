@@ -137,11 +137,12 @@ setup(
         "setuptools>=40.6.3",
         "numpy>=1.13.3"],
     install_requires=[
-            "mne==0.16.1",
+            "mne==0.24.1",
             "pyriemann>=0.2.6",
             "scipy>=1.8",
             "scikit_learn>=0.23",
-            "matplotlib>=3.4.3"],
+            "matplotlib>=3.4.3",
+            "pooch==1.6.0"],
     # List additional groups of dependencies here (e.g. development
     # dependencies). Users will be able to install these using the "extras"
     # syntax, for example:
