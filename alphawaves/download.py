@@ -55,7 +55,7 @@ def data_path(url, sign, path=None, force_update=False, update_path=True,
             os.remove(destination)
         if not op.isdir(op.dirname(destination)):
             os.makedirs(op.dirname(destination))
-        retrieve(url, None, fname=key_dest, path=path)
+        retrieve(url, None, fname=key_dest, path=_url_to_local_path(path))
 
     # Offer to update the path
     _do_path_update(path, update_path, key, sign)
