@@ -5,8 +5,8 @@ import os
 from os import path as op
 
 from mne.datasets.utils import _get_path, _do_path_update
-from mne.utils import _fetch_file, _url_to_local_path, verbose
-
+from mne.utils import _url_to_local_path, verbose
+from pooch import retrieve
 
 @verbose
 def data_path(url, sign, path=None, force_update=False, update_path=True,
@@ -55,7 +55,7 @@ def data_path(url, sign, path=None, force_update=False, update_path=True,
             os.remove(destination)
         if not op.isdir(op.dirname(destination)):
             os.makedirs(op.dirname(destination))
-        _fetch_file(url, destination, print_destination=False)
+        retrieve(url, None, fname=key_dest, path=path)
 
     # Offer to update the path
     _do_path_update(path, update_path, key, sign)
