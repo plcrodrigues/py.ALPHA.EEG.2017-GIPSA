@@ -3,7 +3,7 @@ Repository with basic scripts for using the Alpha Waves Dataset developed at GIP
 
 [https://zenodo.org/record/2348892](https://zenodo.org/record/2348892#.XBdqNs9Ki3I)
 
-The code of this repository was developed in **Python 3.8 and 3.9** using MNE-Python [2, 3] as tool for the EEG processing.
+The code of this repository was developed in **Python 3.9 and 3.10** using MNE-Python [2, 3] as tool for the EEG processing.
 
 The package can be downloaded with pip:
 
