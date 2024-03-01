@@ -142,7 +142,7 @@ setup(
             "scipy>=1.8",
             "scikit_learn>=0.23",
             "matplotlib>=3.4.3",
-            "pooch==1.8.0"],
+            "pooch==1.8.1"],
     # List additional groups of dependencies here (e.g. development
     # dependencies). Users will be able to install these using the "extras"
     # syntax, for example:
