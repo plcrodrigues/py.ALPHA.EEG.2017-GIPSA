@@ -139,7 +139,7 @@ setup(
     install_requires=[
             "mne>=0.24.1",
             "pyriemann>=0.2.6",
-            "scipy==1.14",
+            "scipy==1.14.0",
             "scikit_learn==1.4.0",
             "matplotlib>=3.4.3",
             "pooch==1.8.1"],
