@@ -1,7 +1,7 @@
-mne==0.24.1
-pyriemann>=0.2.6
+mne==1.7.0
+pyriemann==0.5
 setuptools>=40.6.3
-scipy>=1.8
-matplotlib>=3.4.3
-scikit_learn>=0.23
+scipy==1.10.1
+matplotlib==3.6.2
+scikit_learn==1.5.0
 pooch==1.8.1
