@@ -21,7 +21,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        python setup.py develop
+        pip install .
     - name: Run example on classification
       run: python example_classification.py
     - name: Run example on spectra
