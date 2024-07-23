@@ -1,3 +1,8 @@
+# /!\ This package is deprecated
+
+The Alpha Waves Dataset is merged in MOABB, under the name `Rodrigues2017`.
+This package contains examples and validation of the data. 
+
 # Alpha Waves Dataset
 Repository with basic scripts for using the Alpha Waves Dataset developed at GIPSA-lab [1]. The dataset files and their documentation are all available at 
 
