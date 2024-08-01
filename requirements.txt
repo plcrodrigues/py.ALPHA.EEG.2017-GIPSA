@@ -1,5 +1,5 @@
 mne>=0.24.1
-numpy<2.0
+numpy<3.0
 pyriemann>=0.2.6
 setuptools>=40.6.3
 scipy==1.14.0
