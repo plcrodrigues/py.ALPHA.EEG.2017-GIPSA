@@ -140,7 +140,7 @@ setup(
             "numpy<2.0",
             "mne>=0.24.1",
             "pyriemann>=0.2.6",
-            "scipy==1.14.0",
+            "scipy==1.14.1",
             "scikit_learn==1.5.0",
             "matplotlib>=3.4.3",
             "pooch==1.8.2"],
